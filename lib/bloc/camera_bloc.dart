@@ -3,6 +3,7 @@ import 'package:bloc/bloc.dart';
 import 'package:camera/camera.dart';
 import 'package:camera_file_sensor/bloc/camera_event.dart';
 import 'package:camera_file_sensor/bloc/camera_state.dart';
+import 'package:camera_file_sensor/camera_page.dart';
 import 'package:camera_file_sensor/storage_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -140,7 +141,7 @@ class CameraBloc extends Bloc<CameraEvent, CameraState> {
       event.context,
       MaterialPageRoute(
         builder:
-            (_) => BlocProvider.value(value: this),
+            (_) => BlocProvider.value(value: this, child: const CameraPage()),
       ),
     );
 
